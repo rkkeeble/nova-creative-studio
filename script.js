@@ -33,13 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // CONTACT FORM SUBMIT BUTTON
     const contactForm = document.getElementById("contact-form");
-    const contactSubmit = document.getElementById("submit-btn");
+const contactSubmit = document.getElementById("submit-btn");
 
-    if (contactSubmit) {
-        contactSubmit.addEventListener("click", function (event) {
-            if (contactForm.checkValidity()) {
-                alert("Thank you for your message.");
-            }
-        });
+if (contactSubmit && contactForm) {
+  contactSubmit.addEventListener("click", function (event) {
+    event.preventDefault(); // don't actually submit yet
+
+    // This will show the browser's built-in validation messages
+    if (contactForm.reportValidity()) {
+      alert("Thank you for your message.");
     }
-});
+  });
+}
