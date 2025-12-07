@@ -93,3 +93,29 @@ if (clearCartBtn) {
         alert("Cart cleared.");
     });
 }
+
+// =========================
+// CONTACT FORM — LOCAL STORAGE
+// =========================
+
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+
+if (submitBtn && contactForm) {
+    submitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (contactForm.reportValidity()) {
+            const customerData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            };
+
+            localStorage.setItem("CustomerOrder", JSON.stringify(customerData));
+
+            alert("Thank you for your message!");
+        }
+    });
+}
+    
