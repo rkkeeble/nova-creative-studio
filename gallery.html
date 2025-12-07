@@ -6,7 +6,7 @@
   <title>Nova Creative Studio - Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script src="script.js"></script>  
+
 <body>
   <header>
     <h1>Nova Creative Studio</h1>
@@ -29,27 +29,33 @@
         <figure>
           <img src="images/project1.jpg" alt="Branding project for a coffee shop">
           <figcaption>Brand refresh for a local coffee shop.</figcaption>
-          <button class="add-to-cart">Add to Cart</button>
-          <button id="clear-cart">Clear Cart</button>
-          <button id="process-order">Process Order</button>
+          <button class="add-to-cart" data-item="Coffee Shop Branding Project">Add to Cart</button>
         </figure>
 
         <figure>
           <img src="images/project2.jpg" alt="Website design for a photographer">
           <figcaption>Portfolio website for a lifestyle photographer.</figcaption>
-          <button class="add-to-cart">Add to Cart</button>
-          <button id="clear-cart">Clear Cart</button>
-          <button id="process-order">Process Order</button>
+          <button class="add-to-cart" data-item="Photography Portfolio Website">Add to Cart</button>
         </figure>
 
         <figure>
           <img src="images/project3.jpg" alt="Logo design for a wellness studio">
           <figcaption>Logo and visual identity for a wellness studio.</figcaption>
-          <button class="add-to-cart">Add to Cart</button>
-          <button id="clear-cart">Clear Cart</button>
-          <button id="process-order">Process Order</button>
+          <button class="add-to-cart" data-item="Wellness Studio Logo Design">Add to Cart</button>
         </figure>
       </div>
+
+      <!-- Shopping Cart Controls -->
+      <button id="view-cart">View Cart</button>
+      <button id="clear-cart">Clear Cart</button>
+      <button id="process-order">Process Order</button>
+
+      <!-- Cart Modal -->
+      <div id="cart-modal" style="display:none; margin-top:20px;">
+        <h3>Your Cart</h3>
+        <div id="cart-contents">Your cart is empty.</div>
+      </div>
+
     </section>
   </main>
 
@@ -57,5 +63,8 @@
     <p>&copy; 2025 Nova Creative Studio. All rights reserved.</p>
     <button id="subscribe-btn">Subscribe</button>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
